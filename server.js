@@ -5,6 +5,8 @@ app.configure(function() {
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'jade');
 	app.use(express.static(__dirname + '/public'));
+	app.use(express.bodyParser());
+	app.use(express.methodOverride());
 });
 
 app.get('/', function(req, res) {
@@ -12,9 +14,10 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.get('/users', function(req, res) {
-	res.send('Por el momento no hay usuarios');
+app.post('/user', function(req, res) {
+	console.log(req.body);
+	res.render('index');
 });
 
-app.listen(8080);
-console.log('Escuchando en puerto 8080');
+app.listen(8080, "10.0.1.199");
+console.log('Escuchando en puerto 10.0.1.199:8080');
