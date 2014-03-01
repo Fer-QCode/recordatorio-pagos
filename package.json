@@ -1,0 +1,9 @@
+{
+	"name": "recordatorio-pagos",
+	"description": "app para recordar pagos pendientes",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "3.x",
+		"jade": "1.x"
+	}
+}
